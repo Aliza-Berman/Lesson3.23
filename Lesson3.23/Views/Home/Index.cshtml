@@ -1,0 +1,53 @@
+﻿@model SortCarsViewModel;
+
+        <a href="/home/addcar" class="btn btn-success">Add Car</a>
+        <br />
+        
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>
+                    Year
+                    @if (Model.SortAsc)
+                    {
+                        <a class="btn btn-success" href="/home/index?sort=desc">
+                            <span class="glyphicon glyphicon-arrow-up"></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success" href="/home/index?sort=asc">
+                            <span class="glyphicon glyphicon-arrow-down"></span>
+                        </a>
+                    }
+
+                </th>
+                <th>Price</th>
+                <th>Car Type</th>
+                <th>Has Leather Seats</th>
+            </tr>
+
+
+            @foreach (Car car in Model.Cars)
+            {
+                <tr>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.Price.ToString("C")</td>
+                    <td>@car.CarType</td>
+                    <td>
+                        @if (car.HasLeatherSeats)
+                        {
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        }
+                    </td>
+                    
+                </tr>
+            }
+        </table>

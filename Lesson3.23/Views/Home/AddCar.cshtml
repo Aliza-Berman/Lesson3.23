@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <form method="post" action="/home/savecar" id="form">
+            <input type="text" class="input-lg form-control" id="make" placeholder="Make" name="make" />
+            <br />
+            <input type="text" class="input-lg form-control" id="model" placeholder="Model" name="model" />
+            <br />
+            <input type="text" class="input-lg form-control" id="year" placeholder="Year" name="year" />
+            <br />
+            <input type="text" class="input-lg form-control" id="price" placeholder="Price" name="price" />
+            <br />
+            <select class="form-control" name="carType" id="car-type">
+                <option value="-1">--Choose Car Type--</option>
+                <option value="0">SUV</option>
+                <option value="1">Sedan</option>
+                <option value="2">SuperCar</option>
+            </select>
+            <br />
+            <input type="checkbox" name="hasLeatherSeats" value="true" id="has-leather-seats" />
+            Has Leather Seats
+            <br />
+            <br />
+
+            <button disabled  id="save-btn" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="/js/index.js"></script>
+}
+
